@@ -38,25 +38,86 @@
             </div>
           </nav>
     </header>
-    <h1 class="d-flex justify-content-center">Películas y series</h1>
-    <ul class="user-list"></ul>
-    <nav aria-label="Page navigation example" class="d-flex justify-content-center">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-    <script async src="index.js"></script>
+    <main>
+      <div class="movies">
+        <h1 class="d-flex justify-content-center">Películas y series</h1>
+        <ul class="user-list"></ul>
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+      </div>
+      <div>
+        <form class="needs-validation login" novalidate>
+          <legend>Iniciar Sesión</legend>
+          <div class="col-12 p-2" >
+            <div class="input-group has-validation">
+              <input 
+                type="text" 
+                class="form-control" 
+                id="validationCustomUsername" 
+                aria-describedby="inputGroupPrepend" 
+                placeholder="email" 
+                required 
+                minlength="6"
+                pattern=".*@.*\..*"
+                name="email"
+                >
+              <div class="invalid-feedback">
+                Por favor, ingrese su email, debe tener al menos 6 caracteres, un @ y un . 
+              </div>
+            </div>
+          </div>
+          <div class="col-12 p-2">
+            <div class="input-group has-validation">
+              <input 
+              type="password" 
+              class="form-control" 
+              id="validationCustomUsername" 
+              aria-describedby="inputGroupPrepend" 
+              placeholder="contraseña" 
+              required minlength="6" 
+              maxlength="12"
+              name="password" 
+              
+              >
+              <div class="invalid-feedback">
+                Por favor, ingrese su contraseña minimo 6 caracteres maximo 12
+              </div>
+            </div>
+          </div>
+          <div class="col-12 p-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox"  id="invalidCheck" name="terms" required>
+              <label class="form-check-label" for="invalidCheck">
+                Aceptar terminos y condiciones
+              </label>
+              <div class="invalid-feedback">
+                Debes de aceptar los terminos y condiciones
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script async src="validation.js"></script>
+    <script async src="login.js"></script>
+    <script async src="fetchMovies.js"></script>
 </body>
 </html>
